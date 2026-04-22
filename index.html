@@ -66,10 +66,13 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 /* toggle buttons */
 .ttoggle{display:flex;align-items:center;gap:6px}
 .tbtn{background:none;border:1px solid var(--line);color:var(--fog);cursor:pointer;padding:4px 8px;font-family:var(--fd);font-size:11px;letter-spacing:.1em;text-transform:uppercase;transition:all .2s;min-width:28px;height:22px;display:flex;align-items:center;justify-content:center}
-.tbtn:hover{border-color:var(--gold);color:var(--gold2)}
+.tbtn:hover{border-color:var(--gold);color:var(--gold2);background:rgba(200,130,10,.08)}
 .tbtn svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2}
-.lang-btn{font-size:10px;padding:4px 7px}
+.lang-btn{font-size:10px;padding:4px 7px;font-weight:500}
 .lang-btn.active{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.lang-btn.active:hover{background:var(--gold2);color:var(--ink)}
+#themeToggle{color:var(--gold2);border-color:rgba(200,130,10,.3)}
+#themeToggle:hover{background:rgba(200,130,10,.12)}
 @media(max-width:900px){
   .tbar{padding:0 4vw;gap:10px}
   .titems{gap:16px}
@@ -128,7 +131,7 @@ nav{position:fixed;top:36px;left:0;right:0;z-index:500;height:56px;display:flex;
 .ptag:hover,.ptag.active{background:var(--gold);color:var(--ink)}
 h1.htitle{font-family:var(--fd);font-size:clamp(44px,7.5vw,104px);line-height:.9;text-transform:uppercase;color:var(--white);margin-bottom:10px;opacity:0;animation:up .7s .25s forwards}
 h1.htitle .g{color:var(--gold);display:block}
-h1.htitle .dim{-webkit-text-stroke:1px var(--mute);color:transparent;display:block;opacity:.4}
+h1.htitle .dim{-webkit-text-stroke:1px var(--mute);color:transparent;display:block;opacity:.5}
 .hero-desc{font-size:15px;color:var(--silver);max-width:440px;line-height:1.8;margin-bottom:32px;opacity:0;animation:up .7s .4s forwards}
 .hero-acts{display:flex;align-items:center;gap:16px;flex-wrap:wrap;opacity:0;animation:up .7s .55s forwards}
 .hero-right{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;animation:fadeIn .8s .6s forwards}
@@ -177,7 +180,9 @@ section{padding:88px 5vw}
 @media(max-width:720px){section{padding:64px 5vw}}
 
 /* ── LUXURY ── */
-#luxury{position:relative;min-height:88vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--ink)}
+#luxury{position:relative;min-height:88vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#07090B}
+[data-theme="light"] #luxury{background:#14110D}
+[data-theme="light"] #luxury .lx-t,[data-theme="light"] #luxury .lx-t span{color:#F0F5F8}
 #lxCanvas{position:absolute;inset:0;width:100%;height:100%}
 .lx-glow{position:absolute;inset:0;background:radial-gradient(ellipse 65% 55% at 50% 50%,rgba(200,130,10,.14) 0%,rgba(200,130,10,.04) 35%,transparent 65%)}
 .lx-content{position:relative;z-index:4;text-align:center;padding:0 5vw;max-width:900px}
@@ -748,48 +753,48 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:56px 5vw 2
 
 <!-- SETORES -->
 <section id="setores">
-  <div class="s-label">Mercados</div>
-  <h2 class="s-title appear">Setores<br>Atendidos</h2>
+  <div class="s-label" data-pt="Mercados" data-en="Markets">Mercados</div>
+  <h2 class="s-title appear"><span data-pt="Setores" data-en="Sectors">Setores</span><br><span data-pt="Atendidos" data-en="Served">Atendidos</span></h2>
   <div class="ind-grid appear">
-    <article class="ind"><span class="ind-ico">🚗</span><h3 class="ind-name">Automotivo</h3><p class="ind-desc">Fechaduras, emblemas, puxadores e fixação para montadoras e autopeças.</p><div class="ind-acc"></div></article>
-    <article class="ind"><span class="ind-ico">🏭</span><h3 class="ind-name">Indústria Geral</h3><p class="ind-desc">Peças de precisão e componentes técnicos para diversos segmentos.</p><div class="ind-acc"></div></article>
-    <article class="ind"><span class="ind-ico">🔩</span><h3 class="ind-name">Ferragens</h3><p class="ind-desc">Dobradiças, puxadores e componentes para construção civil.</p><div class="ind-acc"></div></article>
-    <article class="ind"><span class="ind-ico">⚙️</span><h3 class="ind-name">Equipamentos</h3><p class="ind-desc">Carcaças, conectores e suportes para equipamentos e eletroeletrônicos.</p><div class="ind-acc"></div></article>
+    <article class="ind"><span class="ind-ico">🚗</span><h3 class="ind-name" data-pt="Automotivo" data-en="Automotive">Automotivo</h3><p class="ind-desc" data-pt="Fechaduras, emblemas, puxadores e fixação para montadoras e autopeças." data-en="Locks, emblems, handles and fasteners for automakers and auto parts.">Fechaduras, emblemas, puxadores e fixação para montadoras e autopeças.</p><div class="ind-acc"></div></article>
+    <article class="ind"><span class="ind-ico">🏭</span><h3 class="ind-name" data-pt="Indústria Geral" data-en="General Industry">Indústria Geral</h3><p class="ind-desc" data-pt="Peças de precisão e componentes técnicos para diversos segmentos." data-en="Precision parts and technical components for various segments.">Peças de precisão e componentes técnicos para diversos segmentos.</p><div class="ind-acc"></div></article>
+    <article class="ind"><span class="ind-ico">🔩</span><h3 class="ind-name" data-pt="Ferragens" data-en="Hardware">Ferragens</h3><p class="ind-desc" data-pt="Dobradiças, puxadores e componentes para construção civil." data-en="Hinges, handles and components for civil construction.">Dobradiças, puxadores e componentes para construção civil.</p><div class="ind-acc"></div></article>
+    <article class="ind"><span class="ind-ico">⚙️</span><h3 class="ind-name" data-pt="Equipamentos" data-en="Equipment">Equipamentos</h3><p class="ind-desc" data-pt="Carcaças, conectores e suportes para equipamentos e eletroeletrônicos." data-en="Housings, connectors and supports for equipment and electronics.">Carcaças, conectores e suportes para equipamentos e eletroeletrônicos.</p><div class="ind-acc"></div></article>
   </div>
 </section>
 
 <!-- LME -->
 <section id="lme">
   <div class="lme-ghost" aria-hidden="true">LME ZINC</div>
-  <div class="s-label">Transparência de preços</div>
-  <h2 class="s-title appear">Cotação LME<br>e o Preço do Zamac</h2>
+  <div class="s-label" data-pt="Transparência de preços" data-en="Price transparency">Transparência de preços</div>
+  <h2 class="s-title appear"><span data-pt="Cotação LME" data-en="LME Quote">Cotação LME</span><br><span data-pt="e o Preço do Zamac" data-en="and Zamac Pricing">e o Preço do Zamac</span></h2>
   <div class="lme-layout appear">
     <div>
       <div class="lme-txt">
-        <p>O preço do zamac é formado pela cotação do <strong>zinco na LME (London Metal Exchange)</strong> em dólares por tonelada, convertida pelo câmbio USD/BRL do dia.</p>
-        <p>Usamos <strong>zamac recuperado de sucata</strong> — isso reduz custos sem comprometer a qualidade da liga 05, permitindo o <strong>preço mais competitivo do mercado</strong>.</p>
+        <p data-pt="O preço do zamac é formado pela cotação do <strong>zinco na LME (London Metal Exchange)</strong> em dólares por tonelada, convertida pelo câmbio USD/BRL do dia." data-en="Zamac pricing is based on <strong>zinc on the LME (London Metal Exchange)</strong> in USD per ton, converted by the daily USD/BRL exchange rate.">O preço do zamac é formado pela cotação do <strong>zinco na LME (London Metal Exchange)</strong> em dólares por tonelada, convertida pelo câmbio USD/BRL do dia.</p>
+        <p data-pt="Usamos <strong>zamac recuperado de sucata</strong> — isso reduz custos sem comprometer a qualidade da liga 05, permitindo o <strong>preço mais competitivo do mercado</strong>." data-en="We use <strong>zamac recovered from scrap</strong> — this cuts costs without compromising the alloy 05 quality, enabling <strong>the most competitive price on the market</strong>.">Usamos <strong>zamac recuperado de sucata</strong> — isso reduz custos sem comprometer a qualidade da liga 05, permitindo o <strong>preço mais competitivo do mercado</strong>.</p>
       </div>
       <div class="ticks">
-        <div class="tick"><div class="tick-lbl">Zinco LME 3M</div><div class="tick-val" id="s-lme">US$ —</div><div class="tick-unit">por tonelada</div><div class="tick-status"><span class="tick-dot"></span><span id="s-lme-date">carregando...</span></div></div>
-        <div class="tick"><div class="tick-lbl">Câmbio USD/BRL</div><div class="tick-val" id="s-brl">R$ —</div><div class="tick-unit">dólar comercial</div><div class="tick-status"><span class="tick-dot"></span><span id="s-brl-date">carregando...</span></div></div>
-        <div class="tick"><div class="tick-lbl">Zinco R$/ton</div><div class="tick-val" id="s-znton">R$ —</div><div class="tick-unit">LME × câmbio</div></div>
-        <div class="tick"><div class="tick-lbl">Zamac 05 est.</div><div class="tick-val" id="s-zam">~R$ —/kg</div><div class="tick-unit">referência mercado</div></div>
+        <div class="tick"><div class="tick-lbl" data-pt="Zinco LME 3M" data-en="LME Zinc 3M">Zinco LME 3M</div><div class="tick-val" id="s-lme">US$ —</div><div class="tick-unit" data-pt="por tonelada" data-en="per ton">por tonelada</div><div class="tick-status"><span class="tick-dot"></span><span id="s-lme-date" data-pt="carregando..." data-en="loading...">carregando...</span></div></div>
+        <div class="tick"><div class="tick-lbl" data-pt="Câmbio USD/BRL" data-en="USD/BRL Rate">Câmbio USD/BRL</div><div class="tick-val" id="s-brl">R$ —</div><div class="tick-unit" data-pt="dólar comercial" data-en="commercial rate">dólar comercial</div><div class="tick-status"><span class="tick-dot"></span><span id="s-brl-date" data-pt="carregando..." data-en="loading...">carregando...</span></div></div>
+        <div class="tick"><div class="tick-lbl" data-pt="Zinco R$/ton" data-en="Zinc BRL/ton">Zinco R$/ton</div><div class="tick-val" id="s-znton">R$ —</div><div class="tick-unit" data-pt="LME × câmbio" data-en="LME × rate">LME × câmbio</div></div>
+        <div class="tick"><div class="tick-lbl" data-pt="Zamac 05 est." data-en="Zamac 05 est.">Zamac 05 est.</div><div class="tick-val" id="s-zam">~R$ —/kg</div><div class="tick-unit" data-pt="referência mercado" data-en="market reference">referência mercado</div></div>
       </div>
-      <p class="lme-note">⚠ Câmbio atualizado automaticamente. LME referência fixa (US$ 3.317). Para orçamento exato, entre em contato.</p>
-      <div class="lme-cta"><a href="https://api.whatsapp.com/send?phone=5511972910728&text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20zamac." class="btn-p" target="_blank" rel="noopener">Solicitar Orçamento</a></div>
+      <p class="lme-note" data-pt="⚠ Câmbio atualizado automaticamente. LME referência fixa (US$ 3.317). Para orçamento exato, entre em contato." data-en="⚠ Exchange rate auto-updated. LME fixed reference (US$ 3,317). For exact quote, contact us.">⚠ Câmbio atualizado automaticamente. LME referência fixa (US$ 3.317). Para orçamento exato, entre em contato.</p>
+      <div class="lme-cta"><a href="https://api.whatsapp.com/send?phone=5511972910728&text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20zamac." class="btn-p" target="_blank" rel="noopener" data-pt="Solicitar Orçamento" data-en="Request Quote">Solicitar Orçamento</a></div>
     </div>
     <div class="lme-explain">
-      <div class="le-title">Como o preço é formado</div>
-      <div class="le-sub">Composição de preço estimada para 1kg de lingote zamac 05:</div>
+      <div class="le-title" data-pt="Como o preço é formado" data-en="How pricing works">Como o preço é formado</div>
+      <div class="le-sub" data-pt="Composição de preço estimada para 1kg de lingote zamac 05:" data-en="Estimated price composition for 1kg of zamac 05 ingot:">Composição de preço estimada para 1kg de lingote zamac 05:</div>
       <div class="formula">
-        <div class="formula-line"><span class="fl-label">Zinco puro (LME)</span><span class="fl-val" id="f1">—</span></div>
-        <div class="formula-line"><span class="fl-label">+ Aditivos Al, Mg, Cu (~8%)</span><span class="fl-val" id="f2">—</span></div>
-        <div class="formula-line"><span class="fl-label">+ Processamento e margem</span><span class="fl-val" id="f3">—</span></div>
-        <div class="formula-line fl-total"><span class="fl-label">= Preço de referência/kg</span><span class="fl-val" id="f4">—</span></div>
+        <div class="formula-line"><span class="fl-label" data-pt="Zinco puro (LME)" data-en="Pure zinc (LME)">Zinco puro (LME)</span><span class="fl-val" id="f1">—</span></div>
+        <div class="formula-line"><span class="fl-label" data-pt="+ Aditivos Al, Mg, Cu (~8%)" data-en="+ Additives Al, Mg, Cu (~8%)">+ Aditivos Al, Mg, Cu (~8%)</span><span class="fl-val" id="f2">—</span></div>
+        <div class="formula-line"><span class="fl-label" data-pt="+ Processamento e margem" data-en="+ Processing &amp; margin">+ Processamento e margem</span><span class="fl-val" id="f3">—</span></div>
+        <div class="formula-line fl-total"><span class="fl-label" data-pt="= Preço de referência/kg" data-en="= Reference price/kg">= Preço de referência/kg</span><span class="fl-val" id="f4">—</span></div>
       </div>
       <div class="recycle-badge">
         <svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 005.64 5.64L1 10M23 14l-4.64 4.36A9 9 0 013.51 15"/></svg>
-        <p>Zamac de sucata: reduzimos o custo de matéria-prima entregando o mesmo desempenho da liga 05 virgem com <strong style="color:var(--gold)">preço menor</strong>.</p>
+        <p data-pt="Zamac de sucata: reduzimos o custo de matéria-prima entregando o mesmo desempenho da liga 05 virgem com <strong style='color:var(--gold)'>preço menor</strong>." data-en="Scrap zamac: we reduce raw material cost delivering the same performance as virgin alloy 05 with a <strong style='color:var(--gold)'>lower price</strong>.">Zamac de sucata: reduzimos o custo de matéria-prima entregando o mesmo desempenho da liga 05 virgem com <strong style="color:var(--gold)">preço menor</strong>.</p>
       </div>
     </div>
   </div>
@@ -797,61 +802,68 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:56px 5vw 2
 
 <!-- FAQ -->
 <section id="faq">
-  <div class="s-label">Dúvidas</div>
+  <div class="s-label" data-pt="Dúvidas" data-en="Questions">Dúvidas</div>
   <h2 class="s-title appear">FAQ</h2>
   <div class="faq-wrap appear">
-    <div class="fi"><button class="fq" type="button" aria-expanded="false"><span class="fqt">O que é lingote de zamac 05?</span><span class="fic">+</span></button><div class="fa"><div class="fai">Lingote de zamac 05 é a liga de zinco mais usada na indústria para injeção sob pressão. Composição de ~96% Zn, ~4% Al e frações de Mg e Cu. Excelente fluidez na injeção, alta resistência mecânica e ótimo acabamento.</div></div></div>
-    <div class="fi"><button class="fq" type="button" aria-expanded="false"><span class="fqt">Qual a diferença entre zamac 02, 03, 05 e 07?</span><span class="fic">+</span></button><div class="fa"><div class="fai">As ligas diferem na proporção de alumínio e cobre. O <strong style="color:var(--gold)">Zamac 05</strong> — nossa especialidade — é o padrão industrial por equilibrar resistência mecânica superior, boa fluidez e acabamento de qualidade.</div></div></div>
-    <div class="fi"><button class="fq" type="button" aria-expanded="false"><span class="fqt">Como funciona o preço do zamac e a cotação LME?</span><span class="fic">+</span></button><div class="fa"><div class="fai">O preço é baseado na cotação do zinco na <strong style="color:var(--gold)">LME</strong> em US$/tonelada, convertida pelo câmbio USD/BRL do dia, acrescida dos aditivos e custo de processamento. Nosso zamac de sucata reduz o custo de matéria-prima.</div></div></div>
-    <div class="fi"><button class="fq" type="button" aria-expanded="false"><span class="fqt">Vocês fabricam moldes novos?</span><span class="fic">+</span></button><div class="fa"><div class="fai">Sim. Desenvolvemos moldes personalizados a partir do desenho técnico ou amostra. Também realizamos adaptações em moldes existentes e suporte técnico a injetoras.</div></div></div>
-    <div class="fi"><button class="fq" type="button" aria-expanded="false"><span class="fqt">Como solicitar orçamento?</span><span class="fic">+</span></button><div class="fa"><div class="fai">Pelo <strong style="color:var(--gold)">WhatsApp (11) 97291-0728</strong> ou formulário desta página. Informe tipo de peça, volume estimado e se possui molde. Retornamos no mesmo dia útil.</div></div></div>
+    <div class="fi"><button class="fq" type="button" aria-expanded="false"><span class="fqt" data-pt="O que é lingote de zamac 05?" data-en="What is a zamac 05 ingot?">O que é lingote de zamac 05?</span><span class="fic">+</span></button><div class="fa"><div class="fai" data-pt="Lingote de zamac 05 é a liga de zinco mais usada na indústria para injeção sob pressão. Composição de ~96% Zn, ~4% Al e frações de Mg e Cu. Excelente fluidez na injeção, alta resistência mecânica e ótimo acabamento." data-en="Zamac 05 ingot is the most widely used zinc alloy in industry for pressure die casting. Composition of ~96% Zn, ~4% Al and fractions of Mg and Cu. Excellent casting fluidity, high mechanical strength and great finish.">Lingote de zamac 05 é a liga de zinco mais usada na indústria para injeção sob pressão. Composição de ~96% Zn, ~4% Al e frações de Mg e Cu. Excelente fluidez na injeção, alta resistência mecânica e ótimo acabamento.</div></div></div>
+    <div class="fi"><button class="fq" type="button" aria-expanded="false"><span class="fqt" data-pt="Qual a diferença entre zamac 02, 03, 05 e 07?" data-en="What's the difference between zamac 02, 03, 05 and 07?">Qual a diferença entre zamac 02, 03, 05 e 07?</span><span class="fic">+</span></button><div class="fa"><div class="fai" data-pt="As ligas diferem na proporção de alumínio e cobre. O <strong style='color:var(--gold)'>Zamac 05</strong> — nossa especialidade — é o padrão industrial por equilibrar resistência mecânica superior, boa fluidez e acabamento de qualidade." data-en="The alloys differ in the proportion of aluminum and copper. <strong style='color:var(--gold)'>Zamac 05</strong> — our specialty — is the industrial standard for balancing superior mechanical strength, good fluidity and quality finish.">As ligas diferem na proporção de alumínio e cobre. O <strong style="color:var(--gold)">Zamac 05</strong> — nossa especialidade — é o padrão industrial por equilibrar resistência mecânica superior, boa fluidez e acabamento de qualidade.</div></div></div>
+    <div class="fi"><button class="fq" type="button" aria-expanded="false"><span class="fqt" data-pt="Como funciona o preço do zamac e a cotação LME?" data-en="How does zamac pricing and LME quotation work?">Como funciona o preço do zamac e a cotação LME?</span><span class="fic">+</span></button><div class="fa"><div class="fai" data-pt="O preço é baseado na cotação do zinco na <strong style='color:var(--gold)'>LME</strong> em US$/tonelada, convertida pelo câmbio USD/BRL do dia, acrescida dos aditivos e custo de processamento. Nosso zamac de sucata reduz o custo de matéria-prima." data-en="Pricing is based on zinc on the <strong style='color:var(--gold)'>LME</strong> in USD/ton, converted by the daily USD/BRL rate, plus additives and processing cost. Our scrap zamac reduces raw material cost.">O preço é baseado na cotação do zinco na <strong style="color:var(--gold)">LME</strong> em US$/tonelada, convertida pelo câmbio USD/BRL do dia, acrescida dos aditivos e custo de processamento. Nosso zamac de sucata reduz o custo de matéria-prima.</div></div></div>
+    <div class="fi"><button class="fq" type="button" aria-expanded="false"><span class="fqt" data-pt="Vocês fabricam moldes novos?" data-en="Do you manufacture new molds?">Vocês fabricam moldes novos?</span><span class="fic">+</span></button><div class="fa"><div class="fai" data-pt="Sim. Desenvolvemos moldes personalizados a partir do desenho técnico ou amostra. Também realizamos adaptações em moldes existentes e suporte técnico a injetoras." data-en="Yes. We develop custom molds from technical drawings or samples. We also adapt existing molds and provide technical support for die-casting machines.">Sim. Desenvolvemos moldes personalizados a partir do desenho técnico ou amostra. Também realizamos adaptações em moldes existentes e suporte técnico a injetoras.</div></div></div>
+    <div class="fi"><button class="fq" type="button" aria-expanded="false"><span class="fqt" data-pt="Como solicitar orçamento?" data-en="How to request a quote?">Como solicitar orçamento?</span><span class="fic">+</span></button><div class="fa"><div class="fai" data-pt="Pelo <strong style='color:var(--gold)'>WhatsApp (11) 97291-0728</strong> ou formulário desta página. Informe tipo de peça, volume estimado e se possui molde. Retornamos no mesmo dia útil." data-en="Via <strong style='color:var(--gold)'>WhatsApp +55 11 97291-0728</strong> or the form on this page. Inform part type, estimated volume and if you have a mold. We reply same business day.">Pelo <strong style="color:var(--gold)">WhatsApp (11) 97291-0728</strong> ou formulário desta página. Informe tipo de peça, volume estimado e se possui molde. Retornamos no mesmo dia útil.</div></div></div>
   </div>
 </section>
 
 <!-- CTA -->
 <section id="cta">
   <div class="cta-c">
-    <h2 class="cta-t appear">Precisa de<em>zamac agora?</em></h2>
-    <p class="cta-s appear">Fale diretamente com quem produz. Orçamento no mesmo dia útil.</p>
+    <h2 class="cta-t appear"><span data-pt="Precisa de" data-en="Need">Precisa de</span><em data-pt="zamac agora?" data-en="zamac now?">zamac agora?</em></h2>
+    <p class="cta-s appear" data-pt="Fale diretamente com quem produz. Orçamento no mesmo dia útil." data-en="Talk directly to the manufacturer. Quote on the same business day.">Fale diretamente com quem produz. Orçamento no mesmo dia útil.</p>
     <div class="cta-acts appear">
       <a href="https://api.whatsapp.com/send?phone=5511972910728&text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." class="btn-p" target="_blank" rel="noopener">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM5.077 19.01l.385-1.404c-1.013-1.658-1.551-3.55-1.551-5.556 0-5.519 4.49-10.01 10.009-10.01 2.676 0 5.19 1.042 7.083 2.934 1.893 1.893 2.935 4.408 2.935 7.083 0 5.52-4.49 10.01-10.009 10.01-1.697 0-3.38-.438-4.859-1.265L5.077 19.01zm7.843-1.26l.298.177c1.279.759 2.744 1.16 4.232 1.16 4.542 0 8.238-3.697 8.238-8.24 0-2.2-.857-4.27-2.413-5.824-1.555-1.556-3.622-2.412-5.825-2.412-4.542 0-8.238 3.696-8.238 8.238 0 1.748.516 3.44 1.49 4.878l.232.37-.988 3.606 3.974-.953z"/></svg>
-        WhatsApp Agora
+        <span data-pt="WhatsApp Agora" data-en="WhatsApp Now">WhatsApp Agora</span>
       </a>
-      <a href="#contato" class="btn-s">Formulário</a>
+      <a href="#contato" class="btn-s" data-pt="Formulário" data-en="Contact Form">Formulário</a>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contato">
-  <div class="s-label">Contato</div>
-  <h2 class="s-title appear">Fale<br>Conosco</h2>
+  <div class="s-label" data-pt="Contato" data-en="Contact">Contato</div>
+  <h2 class="s-title appear"><span data-pt="Fale" data-en="Get in">Fale</span><br><span data-pt="Conosco" data-en="Touch">Conosco</span></h2>
   <div class="cg">
     <div class="ci appear">
-      <div class="c-item"><div class="c-ic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1.84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 9.91A16 16 0 0014.09 17.9l1.43-1.43a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 18.92v-2z"/></svg></div><div><div class="c-lbl">WhatsApp / Tel</div><div class="c-val"><a href="tel:+5511972910728">(11) 97291-0728</a></div></div></div>
-      <div class="c-item"><div class="c-ic"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="c-lbl">E-mail</div><div class="c-val"><a href="mailto:contato@4dzamac.com.br">contato@4dzamac.com.br</a></div></div></div>
-      <div class="c-item"><div class="c-ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="c-lbl">Endereço</div><div class="c-val">Est. Municipal Eloy de Camargo Bueno<br>Tuiuti – SP</div></div></div>
-      <div class="c-item"><div class="c-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="c-lbl">Atendimento</div><div class="c-val">Seg – Sex · 08h às 18h</div></div></div>
+      <div class="c-item"><div class="c-ic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1.84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 9.91A16 16 0 0014.09 17.9l1.43-1.43a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 18.92v-2z"/></svg></div><div><div class="c-lbl" data-pt="WhatsApp / Tel" data-en="WhatsApp / Phone">WhatsApp / Tel</div><div class="c-val"><a href="tel:+5511972910728">(11) 97291-0728</a></div></div></div>
+      <div class="c-item"><div class="c-ic"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="c-lbl" data-pt="E-mail" data-en="Email">E-mail</div><div class="c-val"><a href="mailto:contato@4dzamac.com.br">contato@4dzamac.com.br</a></div></div></div>
+      <div class="c-item"><div class="c-ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="c-lbl" data-pt="Endereço" data-en="Address">Endereço</div><div class="c-val">Est. Municipal Eloy de Camargo Bueno<br>Tuiuti – SP</div></div></div>
+      <div class="c-item"><div class="c-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="c-lbl" data-pt="Atendimento" data-en="Hours">Atendimento</div><div class="c-val" data-pt="Seg – Sex · 08h às 18h" data-en="Mon – Fri · 8am to 6pm">Seg – Sex · 08h às 18h</div></div></div>
     </div>
     <form class="c-form appear" id="cForm" novalidate>
       <div class="f-row">
-        <div class="field"><label for="nome">Nome *</label><input type="text" id="nome" placeholder="Seu nome" required/></div>
-        <div class="field"><label for="emp">Empresa</label><input type="text" id="emp" placeholder="Razão social"/></div>
+        <div class="field"><label for="nome" data-pt="Nome *" data-en="Name *">Nome *</label><input type="text" id="nome" placeholder="Seu nome" data-pt-ph="Seu nome" data-en-ph="Your name" required/></div>
+        <div class="field"><label for="emp" data-pt="Empresa" data-en="Company">Empresa</label><input type="text" id="emp" placeholder="Razão social" data-pt-ph="Razão social" data-en-ph="Company name"/></div>
       </div>
       <div class="f-row">
-        <div class="field"><label for="tel2">Telefone *</label><input type="tel" id="tel2" placeholder="(11) 9 0000-0000" required/></div>
-        <div class="field"><label for="email">E-mail</label><input type="email" id="email" placeholder="seu@email.com"/></div>
+        <div class="field"><label for="tel2" data-pt="Telefone *" data-en="Phone *">Telefone *</label><input type="tel" id="tel2" placeholder="(11) 9 0000-0000" data-pt-ph="(11) 9 0000-0000" data-en-ph="+55 11 9 0000-0000" required/></div>
+        <div class="field"><label for="email" data-pt="E-mail" data-en="Email">E-mail</label><input type="email" id="email" placeholder="seu@email.com" data-pt-ph="seu@email.com" data-en-ph="your@email.com"/></div>
       </div>
-      <div class="field"><label for="svc">Serviço de interesse</label>
-        <select id="svc"><option value="">Selecione...</option><option>Lingote de Zamac 05</option><option>Peças Injetadas em Zamac</option><option>Fabricação de Molde</option><option>Assistência a Injetoras</option><option>Outro</option></select>
+      <div class="field"><label for="svc" data-pt="Serviço de interesse" data-en="Service of interest">Serviço de interesse</label>
+        <select id="svc">
+          <option value="" data-pt="Selecione..." data-en="Select...">Selecione...</option>
+          <option data-pt="Lingote de Zamac 05" data-en="Zamac 05 Ingot">Lingote de Zamac 05</option>
+          <option data-pt="Peças Injetadas em Zamac" data-en="Zamac Die-Cast Parts">Peças Injetadas em Zamac</option>
+          <option data-pt="Fabricação de Molde" data-en="Mold Manufacturing">Fabricação de Molde</option>
+          <option data-pt="Assistência a Injetoras" data-en="Die-Cast Machine Support">Assistência a Injetoras</option>
+          <option data-pt="Outro" data-en="Other">Outro</option>
+        </select>
       </div>
-      <div class="field"><label for="msg">Mensagem *</label><textarea id="msg" placeholder="Tipo de peça, volume estimado, prazo..." required></textarea></div>
+      <div class="field"><label for="msg" data-pt="Mensagem *" data-en="Message *">Mensagem *</label><textarea id="msg" placeholder="Tipo de peça, volume estimado, prazo..." data-pt-ph="Tipo de peça, volume estimado, prazo..." data-en-ph="Part type, estimated volume, deadline..." required></textarea></div>
       <button type="submit" class="f-sub">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-        Enviar via WhatsApp
+        <span data-pt="Enviar via WhatsApp" data-en="Send via WhatsApp">Enviar via WhatsApp</span>
       </button>
-      <p style="font-size:11px;color:var(--mute);margin-top:7px">* Campos obrigatórios. Retornamos no mesmo dia útil.</p>
+      <p style="font-size:11px;color:var(--mute);margin-top:7px" data-pt="* Campos obrigatórios. Retornamos no mesmo dia útil." data-en="* Required fields. We reply same business day.">* Campos obrigatórios. Retornamos no mesmo dia útil.</p>
     </form>
   </div>
 </section>
@@ -860,11 +872,28 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:56px 5vw 2
 <footer>
   <div class="ft">
     <div class="fb">
-      <a href="#hero" class="logo"><div class="logo-hex"><span>4D</span></div><div><div class="logo-name">4D ZAMAC</div><div class="logo-sub">Soluções em Zamac</div></div></a>
-      <p>Fornecedor de lingotes de zamac 05, peças injetadas e moldes. Atendimento direto, preço competitivo. Tuiuti, SP.</p>
+      <a href="#hero" class="logo"><div class="logo-hex"><span>4D</span></div><div><div class="logo-name">4D ZAMAC</div><div class="logo-sub" data-pt="Soluções em Zamac" data-en="Zamac Solutions">Soluções em Zamac</div></div></a>
+      <p data-pt="Fornecedor de lingotes de zamac 05, peças injetadas e moldes. Atendimento direto, preço competitivo. Tuiuti, SP." data-en="Supplier of zamac 05 ingots, die-cast parts and molds. Direct service, competitive pricing. Tuiuti, Brazil.">Fornecedor de lingotes de zamac 05, peças injetadas e moldes. Atendimento direto, preço competitivo. Tuiuti, SP.</p>
     </div>
-    <div class="fc"><h4>Serviços</h4><ul><li><a href="#servicos">Lingote de Zamac 05</a></li><li><a href="#servicos">Peças Injetadas em Zamac</a></li><li><a href="#servicos">Fabricação de Moldes</a></li><li><a href="#servicos">Assistência a Injetoras</a></li></ul></div>
-    <div class="fc"><h4>Navegação</h4><ul><li><a href="#zamac">O que é Zamac?</a></li><li><a href="#lme">Cotação LME</a></li><li><a href="#proc-vid">Processo</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contato">Orçamento</a></li></ul></div>
+    <div class="fc">
+      <h4 data-pt="Serviços" data-en="Services">Serviços</h4>
+      <ul>
+        <li><a href="#servicos" data-pt="Lingote de Zamac 05" data-en="Zamac 05 Ingot">Lingote de Zamac 05</a></li>
+        <li><a href="#servicos" data-pt="Peças Injetadas em Zamac" data-en="Zamac Die-Cast Parts">Peças Injetadas em Zamac</a></li>
+        <li><a href="#servicos" data-pt="Fabricação de Moldes" data-en="Mold Manufacturing">Fabricação de Moldes</a></li>
+        <li><a href="#servicos" data-pt="Assistência a Injetoras" data-en="Die-Cast Machine Support">Assistência a Injetoras</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4 data-pt="Navegação" data-en="Navigation">Navegação</h4>
+      <ul>
+        <li><a href="#zamac" data-pt="O que é Zamac?" data-en="What is Zamac?">O que é Zamac?</a></li>
+        <li><a href="#lme" data-pt="Cotação LME" data-en="LME Quote">Cotação LME</a></li>
+        <li><a href="#proc-vid" data-pt="Processo" data-en="Process">Processo</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contato" data-pt="Orçamento" data-en="Get Quote">Orçamento</a></li>
+      </ul>
+    </div>
   </div>
   <div class="fbot">
     <p>© 2025 4D Soluções em Zamac · CNPJ: [seu CNPJ] · Tuiuti, SP · <a href="tel:+5511972910728">(11) 97291-0728</a></p>
@@ -892,6 +921,59 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:56px 5vw 2
     el.addEventListener('mouseenter',()=>{c.style.width='14px';c.style.height='14px';r.style.width='44px';r.style.height='44px';});
     el.addEventListener('mouseleave',()=>{c.style.width='8px';c.style.height='8px';r.style.width='30px';r.style.height='30px';});
   });
+})();
+
+/* ═══ THEME TOGGLE (dark/light) ═══ */
+(function(){
+  const btn=document.getElementById('themeToggle');
+  const moon=document.getElementById('iconMoon');
+  const sun=document.getElementById('iconSun');
+  if(!btn) return;
+  // restore saved preference
+  const saved=localStorage.getItem('theme')||'dark';
+  applyTheme(saved);
+  btn.addEventListener('click',()=>{
+    const cur=document.documentElement.getAttribute('data-theme')||'dark';
+    const next=cur==='dark'?'light':'dark';
+    applyTheme(next);
+    try{localStorage.setItem('theme',next);}catch(e){}
+  });
+  function applyTheme(t){
+    if(t==='light'){
+      document.documentElement.setAttribute('data-theme','light');
+      moon.style.display='none';sun.style.display='block';
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      moon.style.display='block';sun.style.display='none';
+    }
+  }
+})();
+
+/* ═══ LANGUAGE TOGGLE (PT/EN) ═══ */
+(function(){
+  const btnPt=document.getElementById('langPt');
+  const btnEn=document.getElementById('langEn');
+  if(!btnPt||!btnEn) return;
+  // restore saved preference
+  const saved=localStorage.getItem('lang')||'pt';
+  applyLang(saved);
+  btnPt.addEventListener('click',()=>{applyLang('pt');try{localStorage.setItem('lang','pt');}catch(e){}});
+  btnEn.addEventListener('click',()=>{applyLang('en');try{localStorage.setItem('lang','en');}catch(e){}});
+  function applyLang(l){
+    document.documentElement.setAttribute('lang',l==='en'?'en':'pt-BR');
+    btnPt.classList.toggle('active',l==='pt');
+    btnEn.classList.toggle('active',l==='en');
+    // translate all elements with data-pt / data-en
+    document.querySelectorAll('[data-pt][data-en]').forEach(el=>{
+      const txt=l==='en'?el.getAttribute('data-en'):el.getAttribute('data-pt');
+      if(txt!=null) el.innerHTML=txt;
+    });
+    // translate placeholders
+    document.querySelectorAll('[data-pt-ph][data-en-ph]').forEach(el=>{
+      const ph=l==='en'?el.getAttribute('data-en-ph'):el.getAttribute('data-pt-ph');
+      if(ph!=null) el.setAttribute('placeholder',ph);
+    });
+  }
 })();
 
 /* NAV HAMBURGER — fixed with type=button */
@@ -1124,11 +1206,13 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 (function(){
   const canvas=document.getElementById('scene3d');
   if(!canvas) return;
-  const W=canvas.parentElement.offsetWidth||480, H=420;
-  canvas.style.width='100%'; canvas.style.height=H+'px';
+  // Read size from CSS (which respects media queries)
+  let W=canvas.parentElement.offsetWidth||480;
+  let H=canvas.offsetHeight||420;
+  if(H<100) H=420; // fallback if not yet laid out
 
   const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
-  renderer.setSize(canvas.parentElement.offsetWidth||480, H, false);
+  renderer.setSize(W, H, false);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
   renderer.setClearColor(0x000000, 0);
   renderer.toneMapping=THREE.ACESFilmicToneMapping;
@@ -1138,8 +1222,9 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
   const pmrem=new THREE.PMREMGenerator(renderer);
   scene.environment=pmrem.fromScene(new RoomEnvironment(),0.04).texture;
 
-  const camera=new THREE.PerspectiveCamera(38, (canvas.parentElement.offsetWidth||480)/H, 0.1,100);
-  camera.position.set(0,1.5,6.5);
+  const camera=new THREE.PerspectiveCamera(38, W/H, 0.1,100);
+  camera.position.set(0,0.8,8);
+  camera.lookAt(0,0,0);
 
   scene.add(new THREE.AmbientLight(0xffffff,0.5));
   const key=new THREE.DirectionalLight(0xffd080,2.5); key.position.set(5,8,4); scene.add(key);
@@ -1191,10 +1276,9 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
     const pg=new THREE.PlaneGeometry(0.8,0.8);
     [{mat:decalMat('',true),x:2.75},{mat:decalMat('Z',false),x:6.25},{mat:decalMat('L',false),x:9.75},{mat:decalMat('',true),x:13.25}]
     .forEach(d=>{const dm=new THREE.Mesh(pg,d.mat);dm.position.set(d.x,1.01,0.75);dm.rotation.x=-Math.PI/2;g.add(dm);});
-    const box=new THREE.Box3().setFromObject(g);
-    g.position.sub(box.getCenter(new THREE.Vector3()));
-    g.scale.setScalar(0.17);
-    g.rotation.y=-Math.PI/5;g.rotation.x=Math.PI/12;
+    // give the lingote a nice resting pose
+    g.rotation.y=-Math.PI/6;
+    g.rotation.x=Math.PI/14;
     return g;
   }
 
@@ -1207,6 +1291,7 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
     const pinG=new THREE.CylinderGeometry(0.07,0.07,0.75,12);
     [[-0.9,-0.15,-0.6],[0.9,-0.15,-0.6],[-0.9,-0.15,0.6],[0.9,-0.15,0.6]].forEach(([x,y,z])=>{const pm=new THREE.Mesh(pinG,matGold);pm.position.set(x,y,z);g.add(pm);});
     const ej=new THREE.Mesh(new THREE.BoxGeometry(1.7,0.09,1.1),matSteel);ej.position.set(0,-0.34,0);g.add(ej);
+    g.rotation.y=-Math.PI/7;g.rotation.x=Math.PI/9;
     return g;
   }
 
@@ -1222,13 +1307,40 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
     for(let i=-0.35;i<=0.35;i+=0.35){const rib=new THREE.Mesh(new THREE.BoxGeometry(0.09,1.0,0.07),matZinc);rib.position.set(i,0,0.31);g.add(rib);}
     const bossG=new THREE.CylinderGeometry(0.11,0.11,0.28,12);
     [[-0.8,-0.5,-0.12],[0.8,-0.5,-0.12]].forEach(([x,y,z])=>{const bm=new THREE.Mesh(bossG,matZinc);bm.position.set(x,y,z);g.add(bm);});
+    g.rotation.y=-Math.PI/8;
     return g;
   }
 
   const products=[makeLingote(),makeMolde(),makePeca()];
   const labels=['Lingote Zamac 05','Molde de Injeção','Peça Injetada'];
   let current=0,transitioning=false;
-  const pivots=products.map(p=>{const g=new THREE.Group();g.add(p);scene.add(g);g.visible=false;return g;});
+
+  // AUTO-FIT: normalize each product so it has the same on-screen size.
+  // Strategy: compute world bbox, center it at origin, then scale to a
+  // target radius. Wrap in inner group so pivot can move/animate without
+  // losing centering.
+  const TARGET_RADIUS=2.4; // sphere radius that each model should fit into
+  const pivots=products.map(prod=>{
+    // Compute bbox AFTER the product's own rotations (resting pose)
+    const box=new THREE.Box3().setFromObject(prod);
+    const size=box.getSize(new THREE.Vector3());
+    const center=box.getCenter(new THREE.Vector3());
+    const maxDim=Math.max(size.x,size.y,size.z);
+    const scale=(TARGET_RADIUS*2)/maxDim;
+
+    // Inner group holds the offset & scale; it is what we rotate for spin
+    const inner=new THREE.Group();
+    prod.position.sub(center); // center the product at its local origin
+    inner.add(prod);
+    inner.scale.setScalar(scale);
+
+    // Outer pivot — this is what moves for carousel transitions
+    const pivot=new THREE.Group();
+    pivot.add(inner);
+    scene.add(pivot);
+    pivot.visible=false;
+    return pivot;
+  });
   pivots[0].visible=true;
 
   function goTo(idx,dir){
@@ -1276,7 +1388,8 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
   window.addEventListener('resize',()=>{
     const nw=canvas.parentElement.offsetWidth||480;
-    renderer.setSize(nw,H,false);camera.aspect=nw/H;camera.updateProjectionMatrix();
+    const nh=canvas.offsetHeight||H;
+    renderer.setSize(nw,nh,false);camera.aspect=nw/nh;camera.updateProjectionMatrix();
   });
 })();
 </script>
