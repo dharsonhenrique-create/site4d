@@ -12,7 +12,7 @@
 <meta property="og:title" content="4D Zamac | Lingote Zamac 05 · Peças Injetadas · Tuiuti SP"/>
 <meta property="og:description" content="Fornecedor de lingote zamac 05, peças injetadas e moldes. Atendimento direto, preço competitivo."/>
 <meta property="og:locale" content="pt_BR"/>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ManufacturingBusiness","name":"4D Soluções em Zamac","url":"https://www.4dzamac.com.br","telephone":"+55-11-97291-0728","address":{"@type":"PostalAddress","addressLocality":"Tuiuti","addressRegion":"SP","addressCountry":"BR"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Zamac","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Product","name":"Lingote de Zamac 05"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Peças Injetadas em Zamac"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Fabricação de Moldes"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Assistência a Injetoras"}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ManufacturingBusiness","name":"4D Soluções em Zamac","legalName":"47.382.046 Dharson Henrique da Silva Goncalves","url":"https://www.4dzamac.com.br","telephone":"+55-11-97291-0728","email":"dharson@4dzamac.com.br","address":{"@type":"PostalAddress","streetAddress":"Rua Hum, 0 - Galpão Sítio São Sebastião","addressLocality":"Tuiuti","addressRegion":"SP","postalCode":"12930-000","addressCountry":"BR"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Zamac","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Product","name":"Lingote de Zamac 05"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Peças Injetadas em Zamac"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Fabricação de Moldes"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Assistência a Injetoras"}}]}}</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -388,7 +388,37 @@ section{padding:88px 5vw}
 .f-sub:hover{background:var(--gold2)}
 @media(max-width:900px){.cg{grid-template-columns:1fr}.f-row{grid-template-columns:1fr}}
 
-/* ── FOOTER ── */
+/* ── LOCALIZAÇÃO ── */
+#localizacao{background:var(--ink3);padding:88px 5vw;position:relative;overflow:hidden}
+.loc-layout{display:grid;grid-template-columns:1fr 1.3fr;gap:48px;margin-top:40px;align-items:stretch}
+.loc-info{background:var(--ink2);border:1px solid var(--line);padding:36px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.loc-info::before{content:'';position:absolute;top:0;left:0;width:3px;height:60px;background:var(--gold)}
+.loc-pin{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.loc-pin-icon{width:40px;height:40px;background:rgba(200,130,10,.12);border:1px solid rgba(200,130,10,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;animation:locPulse 2.5s ease-in-out infinite}
+.loc-pin-icon svg{width:18px;height:18px;stroke:var(--gold2);fill:none;stroke-width:1.5}
+@keyframes locPulse{0%,100%{box-shadow:0 0 0 0 rgba(200,130,10,.3)}50%{box-shadow:0 0 0 10px rgba(200,130,10,0)}}
+.loc-pin-text{font-family:var(--fd);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.loc-name{font-family:var(--fd);font-size:clamp(28px,3.5vw,44px);color:var(--white);text-transform:uppercase;line-height:1;margin-bottom:16px}
+.loc-addr{font-size:14px;color:var(--silver);line-height:1.8;margin-bottom:24px}
+.loc-addr strong{color:var(--white);font-weight:500;display:block;margin-bottom:4px}
+.loc-details{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);margin-bottom:28px}
+.loc-d{background:var(--ink3);padding:16px 14px}
+.loc-d-lbl{font-family:var(--fd);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--fog);margin-bottom:4px}
+.loc-d-val{font-size:13px;color:var(--white);font-weight:500}
+.loc-actions{display:flex;flex-direction:column;gap:10px}
+.loc-action{display:flex;align-items:center;gap:10px;padding:12px 16px;border:1px solid var(--line);background:var(--ink3);color:var(--silver);text-decoration:none;font-family:var(--fd);font-size:13px;letter-spacing:.1em;text-transform:uppercase;transition:all .2s}
+.loc-action:hover{border-color:var(--gold);color:var(--gold2);background:var(--ink2)}
+.loc-action svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+/* Map container */
+.loc-map{position:relative;border:1px solid var(--line);overflow:hidden;background:var(--ink);min-height:420px}
+.loc-map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(80%) invert(92%) contrast(83%) hue-rotate(180deg)}
+[data-theme="light"] .loc-map iframe{filter:grayscale(20%) contrast(90%)}
+.loc-map-overlay{position:absolute;top:16px;left:16px;background:rgba(10,13,17,.88);backdrop-filter:blur(8px);border:1px solid var(--line);padding:10px 14px;pointer-events:none;font-family:var(--fd);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);z-index:2}
+@media(max-width:900px){
+  .loc-layout{grid-template-columns:1fr;gap:0}
+  .loc-info{border-bottom:none}
+  .loc-map{min-height:320px;border-top:none}
+}
 footer{background:var(--ink);border-top:1px solid var(--line);padding:56px 5vw 28px}
 .ft{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid var(--line)}
 .fb p{font-size:13px;color:var(--fog);line-height:1.75;margin-top:12px;max-width:300px}
@@ -454,6 +484,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:56px 5vw 2
     <li><a href="#servicos" data-pt="Serviços" data-en="Services">Serviços</a></li>
     <li><a href="#proc-vid" data-pt="Processo" data-en="Process">Processo</a></li>
     <li><a href="#lme" data-pt="LME &amp; Cotação" data-en="LME &amp; Pricing">LME &amp; Cotação</a></li>
+    <li><a href="#localizacao" data-pt="Localização" data-en="Location">Localização</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contato" class="nav-cta" data-pt="Orçamento" data-en="Get Quote">Orçamento</a></li>
   </ul>
@@ -835,21 +866,23 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:56px 5vw 2
   <div class="cg">
     <div class="ci appear">
       <div class="c-item"><div class="c-ic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1.84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 9.91A16 16 0 0014.09 17.9l1.43-1.43a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 18.92v-2z"/></svg></div><div><div class="c-lbl" data-pt="WhatsApp / Tel" data-en="WhatsApp / Phone">WhatsApp / Tel</div><div class="c-val"><a href="tel:+5511972910728">(11) 97291-0728</a></div></div></div>
-      <div class="c-item"><div class="c-ic"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="c-lbl" data-pt="E-mail" data-en="Email">E-mail</div><div class="c-val"><a href="mailto:contato@4dzamac.com.br">contato@4dzamac.com.br</a></div></div></div>
-      <div class="c-item"><div class="c-ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="c-lbl" data-pt="Endereço" data-en="Address">Endereço</div><div class="c-val">Est. Municipal Eloy de Camargo Bueno<br>Tuiuti – SP</div></div></div>
+      <div class="c-item"><div class="c-ic"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="c-lbl" data-pt="E-mail" data-en="Email">E-mail</div><div class="c-val"><a href="mailto:dharson@4dzamac.com.br">dharson@4dzamac.com.br</a></div></div></div>
+      <div class="c-item"><div class="c-ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="c-lbl" data-pt="Endereço" data-en="Address">Endereço</div><div class="c-val">Rua Hum, 0 – Galpão Sítio São Sebastião<br>Passa Três, Tuiuti – SP · 12930-000</div></div></div>
       <div class="c-item"><div class="c-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="c-lbl" data-pt="Atendimento" data-en="Hours">Atendimento</div><div class="c-val" data-pt="Seg – Sex · 08h às 18h" data-en="Mon – Fri · 8am to 6pm">Seg – Sex · 08h às 18h</div></div></div>
     </div>
-    <form class="c-form appear" id="cForm" novalidate>
+    <form class="c-form appear" id="cForm" name="contato-4d" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+      <input type="hidden" name="form-name" value="contato-4d"/>
+      <p style="display:none"><label>Não preencher: <input name="bot-field"/></label></p>
       <div class="f-row">
-        <div class="field"><label for="nome" data-pt="Nome *" data-en="Name *">Nome *</label><input type="text" id="nome" placeholder="Seu nome" data-pt-ph="Seu nome" data-en-ph="Your name" required/></div>
-        <div class="field"><label for="emp" data-pt="Empresa" data-en="Company">Empresa</label><input type="text" id="emp" placeholder="Razão social" data-pt-ph="Razão social" data-en-ph="Company name"/></div>
+        <div class="field"><label for="nome" data-pt="Nome *" data-en="Name *">Nome *</label><input type="text" id="nome" name="nome" placeholder="Seu nome" data-pt-ph="Seu nome" data-en-ph="Your name" required/></div>
+        <div class="field"><label for="emp" data-pt="Empresa" data-en="Company">Empresa</label><input type="text" id="emp" name="empresa" placeholder="Razão social" data-pt-ph="Razão social" data-en-ph="Company name"/></div>
       </div>
       <div class="f-row">
-        <div class="field"><label for="tel2" data-pt="Telefone *" data-en="Phone *">Telefone *</label><input type="tel" id="tel2" placeholder="(11) 9 0000-0000" data-pt-ph="(11) 9 0000-0000" data-en-ph="+55 11 9 0000-0000" required/></div>
-        <div class="field"><label for="email" data-pt="E-mail" data-en="Email">E-mail</label><input type="email" id="email" placeholder="seu@email.com" data-pt-ph="seu@email.com" data-en-ph="your@email.com"/></div>
+        <div class="field"><label for="tel2" data-pt="Telefone *" data-en="Phone *">Telefone *</label><input type="tel" id="tel2" name="telefone" placeholder="(11) 9 0000-0000" data-pt-ph="(11) 9 0000-0000" data-en-ph="+55 11 9 0000-0000" required/></div>
+        <div class="field"><label for="email" data-pt="E-mail" data-en="Email">E-mail</label><input type="email" id="email" name="email" placeholder="seu@email.com" data-pt-ph="seu@email.com" data-en-ph="your@email.com"/></div>
       </div>
       <div class="field"><label for="svc" data-pt="Serviço de interesse" data-en="Service of interest">Serviço de interesse</label>
-        <select id="svc">
+        <select id="svc" name="servico">
           <option value="" data-pt="Selecione..." data-en="Select...">Selecione...</option>
           <option data-pt="Lingote de Zamac 05" data-en="Zamac 05 Ingot">Lingote de Zamac 05</option>
           <option data-pt="Peças Injetadas em Zamac" data-en="Zamac Die-Cast Parts">Peças Injetadas em Zamac</option>
@@ -858,13 +891,69 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:56px 5vw 2
           <option data-pt="Outro" data-en="Other">Outro</option>
         </select>
       </div>
-      <div class="field"><label for="msg" data-pt="Mensagem *" data-en="Message *">Mensagem *</label><textarea id="msg" placeholder="Tipo de peça, volume estimado, prazo..." data-pt-ph="Tipo de peça, volume estimado, prazo..." data-en-ph="Part type, estimated volume, deadline..." required></textarea></div>
+      <div class="field"><label for="msg" data-pt="Mensagem *" data-en="Message *">Mensagem *</label><textarea id="msg" name="mensagem" placeholder="Tipo de peça, volume estimado, prazo..." data-pt-ph="Tipo de peça, volume estimado, prazo..." data-en-ph="Part type, estimated volume, deadline..." required></textarea></div>
       <button type="submit" class="f-sub">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-        <span data-pt="Enviar via WhatsApp" data-en="Send via WhatsApp">Enviar via WhatsApp</span>
+        <span data-pt="Enviar Mensagem" data-en="Send Message">Enviar Mensagem</span>
       </button>
+      <p class="form-status" id="formStatus" style="display:none;font-size:13px;padding:12px;margin-top:10px;border:1px solid rgba(200,130,10,.3);background:rgba(200,130,10,.08);color:var(--gold2)"></p>
       <p style="font-size:11px;color:var(--mute);margin-top:7px" data-pt="* Campos obrigatórios. Retornamos no mesmo dia útil." data-en="* Required fields. We reply same business day.">* Campos obrigatórios. Retornamos no mesmo dia útil.</p>
     </form>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section id="localizacao">
+  <div class="s-label" data-pt="Onde estamos" data-en="Where we are">Onde estamos</div>
+  <h2 class="s-title appear"><span data-pt="Nossa" data-en="Our">Nossa</span><br><span data-pt="Localização" data-en="Location">Localização</span></h2>
+
+  <div class="loc-layout appear">
+    <div class="loc-info">
+      <div>
+        <div class="loc-pin">
+          <div class="loc-pin-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <span class="loc-pin-text" data-pt="Tuiuti · SP · Brasil" data-en="Tuiuti · SP · Brazil">Tuiuti · SP · Brasil</span>
+        </div>
+        <h3 class="loc-name">4D Soluções em Zamac</h3>
+        <div class="loc-addr">
+          <strong data-pt="Endereço" data-en="Address">Endereço</strong>
+          Rua Hum, 0 – Galpão<br>
+          Sítio São Sebastião, Passa Três<br>
+          Tuiuti – SP · CEP 12930-000
+        </div>
+        <div class="loc-details">
+          <div class="loc-d">
+            <div class="loc-d-lbl" data-pt="Horário" data-en="Hours">Horário</div>
+            <div class="loc-d-val" data-pt="Seg–Sex · 8h–18h" data-en="Mon–Fri · 8am–6pm">Seg–Sex · 8h–18h</div>
+          </div>
+          <div class="loc-d">
+            <div class="loc-d-lbl" data-pt="Região" data-en="Region">Região</div>
+            <div class="loc-d-val" data-pt="Interior de SP" data-en="Inland São Paulo">Interior de SP</div>
+          </div>
+        </div>
+      </div>
+      <div class="loc-actions">
+        <a class="loc-action" href="https://www.google.com/maps/search/?api=1&query=4D+Solu%C3%A7%C3%B5es+em+Zamac+Tuiuti+SP" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-pt="Abrir no Google Maps" data-en="Open in Google Maps">Abrir no Google Maps</span>
+        </a>
+        <a class="loc-action" href="https://waze.com/ul?q=Tuiuti%20SP%20Passa%20Tr%C3%AAs" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9 17 14 18.5 21 12 17.5 5.5 21 7 14 2 9 9 8.5 12 2"/></svg>
+          <span data-pt="Rotas pelo Waze" data-en="Directions via Waze">Rotas pelo Waze</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="loc-map">
+      <div class="loc-map-overlay" data-pt="📍 Visualização" data-en="📍 View">📍 Visualização</div>
+      <iframe
+        src="https://www.google.com/maps?q=Tuiuti+SP+12930-000+Passa+Tr%C3%AAs&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Localização 4D Zamac em Tuiuti SP"></iframe>
+    </div>
   </div>
 </section>
 
@@ -890,14 +979,15 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:56px 5vw 2
         <li><a href="#zamac" data-pt="O que é Zamac?" data-en="What is Zamac?">O que é Zamac?</a></li>
         <li><a href="#lme" data-pt="Cotação LME" data-en="LME Quote">Cotação LME</a></li>
         <li><a href="#proc-vid" data-pt="Processo" data-en="Process">Processo</a></li>
+        <li><a href="#localizacao" data-pt="Localização" data-en="Location">Localização</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contato" data-pt="Orçamento" data-en="Get Quote">Orçamento</a></li>
       </ul>
     </div>
   </div>
   <div class="fbot">
-    <p>© 2025 4D Soluções em Zamac · CNPJ: [seu CNPJ] · Tuiuti, SP · <a href="tel:+5511972910728">(11) 97291-0728</a></p>
-    <p><a href="mailto:contato@4dzamac.com.br">contato@4dzamac.com.br</a></p>
+    <p>© 2025 4D Soluções em Zamac · CNPJ: 47.382.046/0001-86 · IE: 764.020.755.115 · Tuiuti, SP · <a href="tel:+5511972910728">(11) 97291-0728</a></p>
+    <p><a href="mailto:dharson@4dzamac.com.br">dharson@4dzamac.com.br</a></p>
   </div>
 </footer>
 
@@ -1157,17 +1247,46 @@ document.querySelectorAll('.fq').forEach(btn=>{
   });
 });
 
-/* FORM */
+/* FORM — sends to Netlify Forms + opens WhatsApp */
 document.getElementById('cForm').addEventListener('submit',function(e){
   e.preventDefault();
+  const form=e.target;
   const nome=document.getElementById('nome').value.trim();
   const emp=document.getElementById('emp').value.trim();
   const tel=document.getElementById('tel2').value.trim();
   const svc=document.getElementById('svc').value;
   const msg=document.getElementById('msg').value.trim();
-  if(!nome||!tel||!msg){alert('Preencha: Nome, Telefone e Mensagem.');return;}
-  const txt=`Olá! Vim pelo site da 4D Zamac.\n\n*Nome:* ${nome}${emp?`\n*Empresa:* ${emp}`:''}\n*Tel:* ${tel}\n*Serviço:* ${svc||'Não especificado'}\n*Mensagem:* ${msg}`;
-  window.open(`https://api.whatsapp.com/send?phone=5511972910728&text=${encodeURIComponent(txt)}`,'_blank');
+  const status=document.getElementById('formStatus');
+  if(!nome||!tel||!msg){
+    status.style.display='block';
+    status.textContent='⚠ Preencha: Nome, Telefone e Mensagem.';
+    status.style.color='#E8A020';
+    return;
+  }
+  status.style.display='block';
+  status.textContent='Enviando...';
+  status.style.color='var(--fog)';
+
+  // 1. Send to Netlify Forms
+  const formData=new FormData(form);
+  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(formData).toString()})
+    .then(()=>{
+      status.textContent='✓ Mensagem enviada! Abrindo WhatsApp para contato direto...';
+      status.style.color='#25D366';
+      // 2. Also open WhatsApp for immediate contact
+      const txt=`Olá! Vim pelo site da 4D Zamac.\n\n*Nome:* ${nome}${emp?`\n*Empresa:* ${emp}`:''}\n*Tel:* ${tel}\n*Serviço:* ${svc||'Não especificado'}\n*Mensagem:* ${msg}`;
+      setTimeout(()=>{
+        window.open(`https://api.whatsapp.com/send?phone=5511972910728&text=${encodeURIComponent(txt)}`,'_blank');
+        form.reset();
+      },800);
+    })
+    .catch(err=>{
+      // Fallback: still open WhatsApp even if Netlify submission fails
+      status.textContent='Abrindo WhatsApp...';
+      status.style.color='var(--gold2)';
+      const txt=`Olá! Vim pelo site da 4D Zamac.\n\n*Nome:* ${nome}${emp?`\n*Empresa:* ${emp}`:''}\n*Tel:* ${tel}\n*Serviço:* ${svc||'Não especificado'}\n*Mensagem:* ${msg}`;
+      window.open(`https://api.whatsapp.com/send?phone=5511972910728&text=${encodeURIComponent(txt)}`,'_blank');
+    });
 });
 
 /* LME TICKER */
